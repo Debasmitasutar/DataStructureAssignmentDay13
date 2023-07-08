@@ -8,11 +8,21 @@ package DataStructure.LinkedList;
         public static void main(String[] args) {
             Linkedlist obj = new Linkedlist();
             obj.append(56);
-            obj.append(30);
             obj.append(70);
-            obj.append(23);
+            System.out.println(obj.head.data);
+            obj.insertInBetween(obj.head,30);
+
             System.out.println("Printing linked list values:-");
             obj.printing();
+        }
+
+        public void insertInBetween(Node previousNode,int data) {
+            //creating object for Node with data
+            Node newNode = new Node(data);
+            //assigning place value for new node as previous.next which is Node1
+            newNode.next = previousNode.next;
+            //Assigning newNode as previous.next value
+            previousNode.next = newNode;
         }
 
         //Adding value to linked list
@@ -60,7 +70,7 @@ package DataStructure.LinkedList;
         }
 
         //creating class node
-        class Node {
+        static class Node {
             int data;
             Node next; //place value
 
