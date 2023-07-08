@@ -12,14 +12,23 @@ package DataStructure.LinkedList;
             obj.add(56);
             System.out.println("Printing linked list values:-");
             obj.printing();
-            obj.pop();
-            System.out.println("Printing linked list after deleting value:-");
+            obj.popLast();
+            System.out.println("Printing linked list after deleting last value:-");
             obj.printing();
         }
 
         //Delete first node means head
         public void pop() {
             this.head = this.head.next;
+        }
+        //Delete last node means tail
+        public void popLast() {
+            Node tempNode = head;
+            while (tempNode.next != tail) {
+                tempNode = tempNode.next;
+            }
+            this.tail = tempNode;
+            tempNode.next = null;
         }
 
         //Insert data between
