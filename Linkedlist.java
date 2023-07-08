@@ -7,15 +7,22 @@ package DataStructure.LinkedList;
 
         public static void main(String[] args) {
             Linkedlist obj = new Linkedlist();
-            obj.append(56);
-            obj.append(70);
-            System.out.println(obj.head.data);
-            obj.insertInBetween(obj.head,30);
-
+            obj.add(70);
+            obj.add(30);
+            obj.add(56);
             System.out.println("Printing linked list values:-");
+            obj.printing();
+            obj.pop();
+            System.out.println("Printing linked list after deleting value:-");
             obj.printing();
         }
 
+        //Delete first node means head
+        public void pop() {
+            this.head = this.head.next;
+        }
+
+        //Insert data between
         public void insertInBetween(Node previousNode,int data) {
             //creating object for Node with data
             Node newNode = new Node(data);
