@@ -8,13 +8,30 @@ package DataStructure.LinkedList;
         public static void main(String[] args) {
             Linkedlist obj = new Linkedlist();
             obj.add(70);
+            obj.add(40);
             obj.add(30);
             obj.add(56);
             System.out.println("Printing values of list:");
             obj.printing();
-            obj.insertInBetween(obj.searchingPerticularNode(30),40);
-            System.out.println("Printing values after insertion:");
+            obj.deletingAPerticularNode(40);
+            System.out.println("Printing values after delete");
             obj.printing();
+
+        }
+
+        //Deleting a perticular value
+        public void deletingAPerticularNode(int value) {
+            if (this.head == null) {
+                System.out.println("List is Empty");
+                return;
+            }
+            Node tempNode = head;
+            while (tempNode.next.data != value) {
+                tempNode = tempNode.next;
+            }
+            Node previousNode = tempNode;
+            Node nextNode = tempNode.next.next;
+            previousNode.next = nextNode;
         }
 
         //Searching a perticular node
