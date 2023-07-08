@@ -7,9 +7,10 @@ package DataStructure.LinkedList;
 
         public static void main(String[] args) {
             Linkedlist obj = new Linkedlist();
-            obj.add(70);
-            obj.add(30);
-            obj.add(56);
+            obj.append(56);
+            obj.append(30);
+            obj.append(70);
+            obj.append(23);
             System.out.println("Printing linked list values:-");
             obj.printing();
         }
@@ -43,6 +44,18 @@ package DataStructure.LinkedList;
                     }
                     temp = temp.next; //temp -> node1
                 }
+            }
+        }
+
+        //creating append function
+        public void append(int data) {
+            Node newNode = new Node(data); //newNode=56
+            if (head == null) {
+                head = newNode; //head=56
+                tail = newNode;//tail=56
+            } else {
+                this.tail.next = newNode;
+                tail = newNode;
             }
         }
 
