@@ -10,7 +10,11 @@ package DataStructure.LinkedList;
             obj.add(70);
             obj.add(30);
             obj.add(56);
-            obj.searchingPerticularNode(30);
+            System.out.println("Printing values of list:");
+            obj.printing();
+            obj.insertInBetween(obj.searchingPerticularNode(30),40);
+            System.out.println("Printing values after insertion:");
+            obj.printing();
         }
 
         //Searching a perticular node
