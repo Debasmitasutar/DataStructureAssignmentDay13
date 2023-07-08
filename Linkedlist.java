@@ -10,11 +10,32 @@ package DataStructure.LinkedList;
             obj.add(70);
             obj.add(30);
             obj.add(56);
-            System.out.println("Printing linked list values:-");
-            obj.printing();
-            obj.popLast();
-            System.out.println("Printing linked list after deleting last value:-");
-            obj.printing();
+            obj.searchingPerticularNode(30);
+        }
+
+        //Searching a perticular node
+        public Node searchingPerticularNode(int value) {
+            Node tempNode = head;
+            int Node = 1;
+            boolean flag = false;
+            if (head == null) {
+                System.out.println("List is empty");
+            } else {
+                while (tempNode != null) {
+                    if (tempNode.data == value) {
+                        flag = true;
+                        break;
+                    }
+                    Node++;
+                    tempNode = tempNode.next;
+                }
+            }
+            if (flag) {
+                System.out.println("Element:" + value + " is present at Node:" + Node);
+            } else {
+                System.out.println("This element not present!!");
+            }
+            return tempNode;
         }
 
         //Delete first node means head
