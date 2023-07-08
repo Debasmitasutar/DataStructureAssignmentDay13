@@ -7,11 +7,9 @@ package DataStructure.LinkedList;
 
         public static void main(String[] args) {
             Linkedlist obj = new Linkedlist();
-            obj.add(56);
-            obj.add(30);
             obj.add(70);
-            obj.add(23);
-
+            obj.add(30);
+            obj.add(56);
             System.out.println("Printing linked list values:-");
             obj.printing();
         }
